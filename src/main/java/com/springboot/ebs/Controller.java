@@ -7,16 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller 
 {
-	@Value("$(SPRING_DATASOURCE_URL)")
+	@Value("${SPRING_DATASOURCE_URL}")
 	private String SPRING_DATASOURCE_URL;
 	
-	@Value("$(DBusername)")
+	@Value("${DBusername}")
 	private String DBusername;
+	
+	@Value("${DBpassword}")
+	private String DBpassword;
 	
 	@GetMapping("/properties")
 	public String printProperties()
 	{
-		return SPRING_DATASOURCE_URL + " " + DBusername;
+		return SPRING_DATASOURCE_URL + " " + DBusername + " " + DBpassword;
 	}
 
 }
