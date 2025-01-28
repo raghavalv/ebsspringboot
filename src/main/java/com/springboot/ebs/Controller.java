@@ -16,10 +16,13 @@ public class Controller
 	@Value("${DBpassword}")
 	private String DBpassword;
 	
+	@Value("${Sourcepath}")
+	private String Sourcepath;
+	
 	@GetMapping("/properties")
 	public String printProperties()
 	{
-		return SPRING_DATASOURCE_URL + " " + DBusername + " " + DBpassword;
+		return SPRING_DATASOURCE_URL + " " + DBusername + " " + DBpassword + " " + Sourcepath;
 	}
 
 }
